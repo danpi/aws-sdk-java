@@ -24,6 +24,9 @@ matrix:
     - jdk: oraclejdk8
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin,\!aws-java-sdk-opensdk MAVEN_OPTS=-XX:MaxPermSize=256m
 
+before_install:
+  - cp ./tools/.travis.settings.xml $HOME/.m2/settings.xml
+
 notifications:
   email:
     - github-awsforjava@amazon.com
